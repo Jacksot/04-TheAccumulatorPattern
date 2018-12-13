@@ -131,7 +131,7 @@ def run_test_draw_circles_from_rectangle():
     print('--------------------------------------------------')
 
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  draw_circles_from_rectangle  function
     #   defined below.  Include at least **   3   ** tests, of which
     #      ***  at least TWO tests are on ONE window and
@@ -157,6 +157,20 @@ def run_test_draw_circles_from_rectangle():
 
     rectangle2 = rg.Rectangle(rg.Point(600, 400), rg.Point(500, 450))
     rectangle2.fill_color = 'blue'
+    rectangle2.outline_color = 'red'
+    rectangle2.outline_thickness = 3
+    draw_circles_from_rectangle(8, 3, rectangle2, window1)
+
+    title2 = 'Test 3 of DRAW_CIRCLES_FROM_RECTANGLES: '
+    window2 = rg.RoseWindow(620, 380, title2)
+
+    # Test 3:
+
+    rectangle3 = rg.Rectangle(rg.Point(375, 330), rg.Point(350, 280))
+    rectangle3.fill_color = 'yellow'
+    rectangle3.outline_color = 'brown'
+    rectangle3.outline_thickness = 5
+    draw_circles_from_rectangle(6, 10, rectangle3, window2)
     
 
 def draw_circles_from_rectangle(m, n, rectangle, window):
@@ -213,6 +227,11 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     ###########################################################################
     # -------------------------------------------------------------------------
 
+    rectangle.x = x
+    rectangle.y = y
+    rectangle.attach_to(window)
+    circle = rg.Circle(rg.Point(),
+    window.render()
 
 def run_test_draw_lines_from_rectangles():
     """ Tests the   draw_lines_from_rectangles  function. """
