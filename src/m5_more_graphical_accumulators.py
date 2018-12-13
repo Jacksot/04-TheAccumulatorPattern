@@ -151,6 +151,12 @@ def run_test_draw_circles_from_rectangle():
 
     rectangle = rg.Rectangle(rg.Point(400, 250), rg.Point(440, 325))
     rectangle.fill_color = 'green'
+    rectangle.outline_color = 'black'
+    rectangle.outline_thickness = 5
+    draw_circles_from_rectangle(4, 5, rectangle, window1)
+
+    rectangle2 = rg.Rectangle(rg.Point(600, 400), rg.Point(500, 450))
+    rectangle2.fill_color = 'blue'
     
 
 def draw_circles_from_rectangle(m, n, rectangle, window):
