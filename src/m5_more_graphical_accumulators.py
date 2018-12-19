@@ -226,11 +226,13 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ###########################################################################
     # -------------------------------------------------------------------------
-
+    rectangle.attach_to(window)
     rectangle.x = x
     rectangle.y = y
     rectangle.attach_to(window)
-    circle = rg.Circle(rg.Point(),
+    for k in range()
+        circle = rg.Circle(rg.Point(
+            circle.attach_to(window)
     window.render()
 
 def run_test_draw_lines_from_rectangles():
