@@ -229,6 +229,8 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     rectangle.attach_to(window)
     rectcenter = rectangle.get_center().x
     width = rectangle.get_width()
+    color1 = rectangle.outline_color
+    color2 = rectangle.fill_color
     x1 = rectangle.get_upper_left_corner().x
     x2 = rectangle.get_lower_left_corner().x
     y1 = rectangle.get_upper_left_corner().y
@@ -237,6 +239,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     for k in range(m):
 
         circle = rg.Circle(rg.Point((((x2+x1)*0.5) + radius) + (k*(2*radius)), (y2+y1)*0.5), radius)
+        circle.fill_color = color2
         circle.attach_to(window)
     window.render()
 
