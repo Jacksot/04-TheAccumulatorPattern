@@ -236,7 +236,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     radius = (y1-y2)*0.5
     for k in range(m):
 
-        circle = rg.Circle(rg.Point((((x2+x1)*0.5) + radius) + (k), (y2+y1)*0.5), radius)
+        circle = rg.Circle(rg.Point((((x2+x1)*0.5) + radius) + (k*(2*radius)), (y2+y1)*0.5), radius)
         circle.attach_to(window)
     window.render()
 
