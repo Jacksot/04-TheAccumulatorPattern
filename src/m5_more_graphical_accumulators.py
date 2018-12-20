@@ -227,20 +227,32 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     ###########################################################################
     # -------------------------------------------------------------------------
     rectangle.attach_to(window)
-    rectcenter = rectangle.get_center().x
-    width = rectangle.get_width()
     color1 = rectangle.outline_color
     color2 = rectangle.fill_color
     x1 = rectangle.get_upper_left_corner().x
     x2 = rectangle.get_lower_left_corner().x
     y1 = rectangle.get_upper_left_corner().y
     y2 = rectangle.get_lower_left_corner().y
-    radius = (y1-y2)*0.5
+    radius1 = (y1-y2)*0.5
+
     for k in range(m):
 
-        circle = rg.Circle(rg.Point((((x2+x1)*0.5) + radius) + (k*(2*radius)), (y2+y1)*0.5), radius)
+        circle = rg.Circle(rg.Point((((x2+x1)*0.5) + radius1) + (k*(2*radius1)), (y2+y1)*0.5), radius1)
         circle.fill_color = color2
         circle.attach_to(window)
+
+    x1 = rectangle.get_upper_left_corner().x
+    y1 = rectangle.get_upper_left_corner().y
+    x3 = rectangle.get_upper_right_corner().x
+    y3 = rectangle.get_upper_right_corner().y
+    radius2 = (x3 - x1) * 0.5
+
+    for k in range(n):
+
+        circle1 = rg.Circle(rg.Point((x3+x1)*0.5, (((y3+y1)*0.5)-radius2)-(k*(2*radius2))), radius2)
+        circle1.outline_color = color1
+        circle1.attach_to(window)
+
     window.render()
 
 
