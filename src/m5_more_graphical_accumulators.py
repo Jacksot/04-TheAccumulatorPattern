@@ -28,7 +28,7 @@ import rosegraphics as rg
 def main():
     """ Calls the   TEST   functions in this module. """
     #run_test_draw_squares_from_circle()
-    run_test_draw_circles_from_rectangle()
+    #run_test_draw_circles_from_rectangle()
     run_test_draw_lines_from_rectangles()
 
 
@@ -213,7 +213,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
       :type window: rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -347,6 +347,20 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     ###########################################################################
     # -------------------------------------------------------------------------
 
+    rectangle1.attach_to(window)
+    rectangle2.attach_to(window)
+    length = 
+    start1x = rectangle1.get_center().x
+    start1y = rectangle1.get_center().y
+    start2x = rectangle1.get_lower_left_corner().x
+    start2y = rectangle2.get_lower_left_corner().y
+    endx = rectangle2.get_center().x
+    endy = rectangle2.get_center().y
+    for k in range(n):
+        line1 = rg.Line(rg.Point(start1x, start1y), rg.Point(endx, endy))
+        line2 = rg.Line(rg.Point(start2x, start2y), rg.Point())
+        line1.attach_to(window)
+    window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
