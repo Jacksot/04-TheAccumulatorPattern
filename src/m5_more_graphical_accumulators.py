@@ -349,13 +349,13 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
 
     rectangle1.attach_to(window)
     rectangle2.attach_to(window)
-    length = 
     start1x = rectangle1.get_center().x
     start1y = rectangle1.get_center().y
     start2x = rectangle1.get_lower_left_corner().x
     start2y = rectangle2.get_lower_left_corner().y
     endx = rectangle2.get_center().x
     endy = rectangle2.get_center().y
+    length = start1x + endx
     for k in range(n):
         line1 = rg.Line(rg.Point(start1x, start1y), rg.Point(endx, endy))
         line2 = rg.Line(rg.Point(start2x, start2y), rg.Point())
