@@ -349,13 +349,23 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
 
     rectangle1.attach_to(window)
     rectangle2.attach_to(window)
-
-    line1 = rg.Line(rg.Point(rectangle1.get_center().x, rectangle1.get_center().y), rg.Point(rectangle2.get_center().x, rectangle2.get_center().y))
+    color1 = rectangle1.outline_color
+    color2 = rectangle2.outline_color
+    start1x = rectangle1.get_center().x
+    start1y = rectangle1.get_center().y
+    start2x = rectangle1.get_lower_left_corner().x
+    start2y = rectangle2.get_lower_left_corner().y
+    endx = rectangle2.get_center().x
+    endy = rectangle2.get_center().y
     w = rectangle1.get_width() / 2
-    z = rectangle1.get_height() / 2
+    h = rectangle1.get_height() / 2
     for k in range(n):
+        line1 = rg.Line(rg.Point(start1x - (k*(2*w)), start1y + (k*(2*h))), rg.Point(endx - (k*(2*w)), endy + (k*(2*h))))
+        line2 = rg.Line(rg.Point((start1x-w) - (k*(2*w)), (start1y + h) + (k*(2*h))), rg.Point((endx-w) - (k*(2*w)), endy+h + (k*(2*h))))
+        line1.color = color1
+        line2.color = color2
+        line2.attach_to(window)
         line1.attach_to(window)
-        line1 = rg.Line(rg.Point(line1.start.x - w, line1.start.y + z), rg.Point(line1.end.x - w, line1.end.y + z))
     window.render()
 
 # -----------------------------------------------------------------------------
