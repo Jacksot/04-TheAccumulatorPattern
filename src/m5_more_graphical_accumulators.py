@@ -353,8 +353,6 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     color2 = rectangle2.outline_color
     start1x = rectangle1.get_center().x
     start1y = rectangle1.get_center().y
-    start2x = rectangle1.get_lower_left_corner().x
-    start2y = rectangle2.get_lower_left_corner().y
     endx = rectangle2.get_center().x
     endy = rectangle2.get_center().y
     w = rectangle1.get_width() / 2
